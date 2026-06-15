@@ -15,8 +15,8 @@ const PROJECTS = [
     tags: ['Angular', 'Spring Boot', 'Microservices', 'REST API', 'Spring Security', 'Java'],
 
     featured: true,
-
-    github: 'https://github.com/varshini057',
+    // TODO: Replace with the actual repository URL for this project
+    github: 'https://github.com/varshini057/Bookify',
 
     image: [
 
@@ -37,8 +37,8 @@ const PROJECTS = [
     tags: ['HTML', 'CSS', 'MySQL', 'Community Platform'],
 
     featured: false,
-
-    github: 'https://github.com/varshini057',
+    // TODO: Replace with the actual repository URL for this project
+    github: 'https://github.com/varshini057/Reconnect',
 
     image: [
 
@@ -297,4 +297,3 @@ export default function Projects() {
   );
 
 }
-

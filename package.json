@@ -2,7 +2,7 @@
   "name": "portfolio-v",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://ajju0418.github.io/Portfolio-v",
+  "homepage": "https://varshini057.github.io/Portfolio-v",
   "description": "Personal portfolio site",
   "scripts": {
     "start": "react-scripts start",
@@ -14,13 +14,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ajju0418/Portfolio-v.git"
+    "url": "git+https://github.com/varshini057/Portfolio-v.git"
   },
   "keywords": [],
-  "author": "ajju0418",
+  "author": "varshini057",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ajju0418/Portfolio-v/issues"
+    "url": "https://github.com/varshini057/Portfolio-v/issues"
   },
   "dependencies": {
     "react": "^18.2.0",

@@ -27,7 +27,7 @@ const TIMELINE = [
     role: 'Programmer Analyst Trainee',
     company: 'Cognizant Technology Solutions',
     location: 'Chennai, India',
-    date: 'Oct 2025 – Present',
+    date: 'Oct 2023 – Present',
     points: [
       'Working on the Bayer Project: authentication & authorization in a publishing platform.',
       'Secure backend development, testing, and code reviews in an Agile environment.',
@@ -41,7 +41,7 @@ const TIMELINE = [
     role: 'Java Full Stack Intern',
     company: 'Cognizant Technology Solutions',
     location: 'Chennai, India',
-    date: 'July 2025 – Sept 2025',
+    date: 'July 2023 – Sept 2023',
     points: [
       'Backend microservices with Java & Spring Boot; frontend with Angular.',
       'RESTful APIs for book management, member workflows, and fine calculation.',
@@ -56,7 +56,7 @@ const TIMELINE = [
     role: 'B.Tech — Computer Science & Business Systems',
     company: 'Sri Krishna College of Engineering and Technology',
     location: 'Coimbatore',
-    date: 'Nov 2021 – April 2025',
+    date: 'Nov 2021 – Apr 2025',
     score: '8.8 CGPA',
     points: [
       'Coursework: Data Structures, Algorithms, DBMS, Software Engineering, Operating Systems.',
@@ -70,7 +70,7 @@ const TIMELINE = [
     role: 'Higher Secondary (12th Grade)',
     company: 'Sri Vetri Vikas Matric Higher Secondary School',
     location: 'Dharmapuri',
-    date: 'Jun 2019 – April 2021',
+    date: 'Jun 2019 – Apr 2021',
     score: '94.3%',
     points: [
       'Stream: Biology & Mathematics (Bio-Maths).',

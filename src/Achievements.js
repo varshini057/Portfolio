@@ -5,9 +5,10 @@ const CERT = {
   title: 'GitHub Foundations',
   badge: 'GH-900',
   issuer: 'GitHub',
-  date: '2024',
+  date: '2023',
   desc: 'Certified in GitHub fundamentals including repositories, branches, commits, and pull requests. Demonstrated proficiency in collaboration workflows and GitHub features.',
-  link: 'https://github.com/varshini057',
+  // TODO: Replace with the actual URL to the credential if available
+  link: 'https://www.credly.com/users/varshini-a/badges',
 };
 
 const HACKATHONS = [
@@ -15,7 +16,7 @@ const HACKATHONS = [
     icon: '🗺️',
     mode: 'Offline · 48hrs',
     result: 'Participant',
-    event: 'TN Smart City Hackathon 2025',
+    event: 'TN Smart City Hackathon 2024',
     venue: 'IIT Madras Research Park, Chennai',
     team: 'Tech Kuruvigal',
     theme: 'Urban Tech & Sustainability',
@@ -28,7 +29,7 @@ const HACKATHONS = [
     icon: '💸',
     mode: 'Online · 36hrs',
     result: 'Top 20 Finalist',
-    event: 'Global FinTech Virtual Challenge 2025',
+    event: 'Global FinTech Virtual Challenge 2023',
     venue: 'Global Web3 & FinTech Virtual Challenge',
     team: 'ByteCrafters',
     theme: 'Financial Inclusion',
@@ -41,7 +42,7 @@ const HACKATHONS = [
     icon: '♿',
     mode: 'Online · 24hrs',
     result: 'Participant',
-    event: 'Code for Good Virtual Hack 2026',
+    event: 'Code for Good Virtual Hack 2022',
     venue: 'Code for Good',
     team: 'Agile Avengers',
     theme: 'EdTech & Accessibility',
@@ -59,7 +60,7 @@ function CgpaCard() {
       <div className="cgpa-glow-orb" />
       <div className="cgpa-header">
         <div className="cgpa-header-left">
-          <span className="cgpa-pill">B.Tech · 2022 – 2026</span>
+          <span className="cgpa-pill">B.Tech · 2021 – 2025</span>
           <h3 className="cgpa-degree">Computer Science<br /><span>&amp; Business Systems</span></h3>
           <p className="cgpa-inst">Sri Krishna College of Engineering &amp; Technology</p>
         </div>
