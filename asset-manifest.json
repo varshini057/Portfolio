@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/Portfolio-v/static/js/main.35a739c9.js",
+    "main.js": "/Portfolio-v/static/js/main.ef78354a.js",
     "static/media/cognizant-logo.png": "/Portfolio-v/static/media/cognizant-logo.754284e257d61ccf1b2d.png",
     "static/media/profile.jpg": "/Portfolio-v/static/media/profile.37b81eeb8327d58d1f22.jpg",
     "index.html": "/Portfolio-v/index.html",
-    "main.35a739c9.js.map": "/Portfolio-v/static/js/main.35a739c9.js.map"
+    "main.ef78354a.js.map": "/Portfolio-v/static/js/main.ef78354a.js.map"
   },
   "entrypoints": [
-    "static/js/main.35a739c9.js"
+    "static/js/main.ef78354a.js"
   ]
 }
