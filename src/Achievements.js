@@ -1,23 +1,51 @@
 import { useReveal } from './hooks';
 
-const CERT = {
-  icon: '🏆',
-  title: 'GitHub Foundations',
-  badge: 'GH-900',
-  issuer: 'GitHub',
-  date: '2023',
-  desc: 'Certified in GitHub fundamentals including repositories, branches, commits, and pull requests. Demonstrated proficiency in collaboration workflows and GitHub features.',
-  // TODO: Replace with the actual URL to the credential if available
-  link: 'https://www.credly.com/users/varshini-a/badges',
+/* ---- Consistent stroke icon set (no emojis) ---- */
+const svg = (children) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">{children}</svg>
+);
+
+const I = {
+  trophy: svg(<><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" /><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" /><path d="M4 22h16" /><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" /><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" /><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" /></>),
+  cap: svg(<><path d="M22 10v6M2 10l10-5 10 5-10 5z" /><path d="M6 12v5c3 3 9 3 12 0v-5" /></>),
+  route: svg(<><circle cx="6" cy="19" r="3" /><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15" /><circle cx="18" cy="5" r="3" /></>),
+  coins: svg(<><circle cx="8" cy="8" r="6" /><path d="M18.09 10.37A6 6 0 1 1 10.34 18" /><path d="M7 6h1v4" /><path d="m16.71 13.88.7.71-2.82 2.82" /></>),
+  access: svg(<><circle cx="16" cy="4" r="1" /><path d="m18 19 1-7-6 1" /><path d="m5 8 3-3 5.5 3-2.36 3.5" /><path d="M4.24 14.5a5 5 0 0 0 6.88 6" /><path d="M13.76 17.5a5 5 0 0 0-6.88-6" /></>),
+  layers: svg(<><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z" /><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65" /><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65" /></>),
+  users: svg(<><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></>),
+  target: svg(<><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" /></>),
+  clock: svg(<><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></>),
+  external: svg(<><path d="M15 3h6v6" /><path d="M10 14 21 3" /><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /></>),
 };
+
+const CERTS = [
+  {
+    icon: I.layers,
+    title: 'Claude Certified Architect',
+    badge: 'Foundations',
+    issuer: 'Anthropic',
+    date: '2025',
+    desc: 'Foundational certification covering Claude model capabilities, prompt engineering, and the principles of architecting reliable, production-grade AI-powered applications.',
+    link: '',
+  },
+  {
+    icon: I.trophy,
+    title: 'GitHub Foundations',
+    badge: 'GH-900',
+    issuer: 'GitHub',
+    date: '2023',
+    desc: 'Certified in GitHub fundamentals — repositories, branches, commits, and pull requests — with proven proficiency in collaboration workflows and core GitHub features.',
+    link: 'https://www.credly.com/users/varshini-a/badges',
+  },
+];
 
 const HACKATHONS = [
   {
-    icon: '🗺️',
-    mode: 'Offline · 48hrs',
+    icon: I.route,
+    mode: 'Offline · 48 hrs',
     result: 'Participant',
+    highlight: false,
     event: 'TN Smart City Hackathon 2024',
-    venue: 'IIT Madras Research Park, Chennai',
     team: 'Tech Kuruvigal',
     theme: 'Urban Tech & Sustainability',
     project: 'Kuppai-Connect',
@@ -26,11 +54,11 @@ const HACKATHONS = [
     stack: ['React', 'REST API', 'GitHub'],
   },
   {
-    icon: '💸',
-    mode: 'Online · 36hrs',
+    icon: I.coins,
+    mode: 'Online · 36 hrs',
     result: 'Top 20 Finalist',
+    highlight: true,
     event: 'Global FinTech Virtual Challenge 2023',
-    venue: 'Global Web3 & FinTech Virtual Challenge',
     team: 'ByteCrafters',
     theme: 'Financial Inclusion',
     project: 'MicroFundr',
@@ -39,11 +67,11 @@ const HACKATHONS = [
     stack: ['Angular', 'Spring Security', 'RBAC', 'Auth & AuthZ'],
   },
   {
-    icon: '♿',
-    mode: 'Online · 24hrs',
+    icon: I.access,
+    mode: 'Online · 24 hrs',
     result: 'Participant',
+    highlight: false,
     event: 'Code for Good Virtual Hack 2022',
-    venue: 'Code for Good',
     team: 'Agile Avengers',
     theme: 'EdTech & Accessibility',
     project: 'Padippu.io',
@@ -56,88 +84,66 @@ const HACKATHONS = [
 function CgpaCard() {
   const ref = useReveal(0.15);
   return (
-    <div className="ach-card cgpa-card reveal" ref={ref}>
-      <div className="cgpa-glow-orb" />
-      <div className="cgpa-header">
-        <div className="cgpa-header-left">
-          <span className="cgpa-pill">B.Tech · 2021 – 2025</span>
-          <h3 className="cgpa-degree">Computer Science<br /><span>&amp; Business Systems</span></h3>
-          <p className="cgpa-inst">Sri Krishna College of Engineering &amp; Technology</p>
-        </div>
+    <article className="ach-card cgpa reveal" ref={ref}>
+      <div className="ach-card-top">
+        <div className="ach-chip gold">{I.cap}</div>
         <div className="cgpa-score-block">
           <span className="cgpa-score">8.8</span>
-          <span className="cgpa-score-label">CGPA</span>
+          <span className="cgpa-score-label">CGPA / 10</span>
         </div>
       </div>
-      <div className="cgpa-divider" />
+      <h3 className="ach-name">B.Tech · Computer Science &amp; Business Systems</h3>
+      <p className="ach-sub">Sri Krishna College of Engineering &amp; Technology · 2021–2025</p>
       <div className="cgpa-stats">
-        <div className="cgpa-stat">
-          <span className="cgpa-stat-val">Top 10%</span>
-          <span className="cgpa-stat-key">Class Rank</span>
-        </div>
-        <div className="cgpa-stat-sep" />
-        <div className="cgpa-stat">
-          <span className="cgpa-stat-val">4 Yrs</span>
-          <span className="cgpa-stat-key">Duration</span>
-        </div>
-        <div className="cgpa-stat-sep" />
-        <div className="cgpa-stat">
-          <span className="cgpa-stat-val">Distinction</span>
-          <span className="cgpa-stat-key">Honours</span>
-        </div>
+        <div className="cgpa-stat"><span className="cgpa-stat-val">Top 10%</span><span className="cgpa-stat-key">Class Rank</span></div>
+        <div className="cgpa-stat"><span className="cgpa-stat-val">Distinction</span><span className="cgpa-stat-key">Honours</span></div>
+        <div className="cgpa-stat"><span className="cgpa-stat-val">4 Years</span><span className="cgpa-stat-key">Duration</span></div>
       </div>
-      <div className="cgpa-bar-wrap">
-        <div className="cgpa-bar-track">
-          <div className="cgpa-bar-fill" style={{ width: '88%' }} />
-        </div>
-        <span className="cgpa-bar-pct">88%</span>
-      </div>
-    </div>
+    </article>
   );
 }
 
-function CertCard() {
+function CertCard({ a }) {
   const ref = useReveal(0.15);
-  const ach = CERT;
   return (
-    <div className="ach-card reveal" ref={ref}>
-      <div className="ach-badge">{ach.badge}</div>
-      <div className="ach-icon">{ach.icon}</div>
-      <h3 className="ach-title">{ach.title}</h3>
-      <p className="ach-issuer">Issued by {ach.issuer}</p>
-      <p className="ach-date">{ach.date}</p>
-      <p className="ach-desc">{ach.desc}</p>
-      <a className="ach-link" href={ach.link} target="_blank" rel="noopener noreferrer">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
-        </svg>
-        View Credential
-      </a>
-    </div>
+    <article className="ach-card cert reveal" ref={ref}>
+      <div className="ach-card-top">
+        <div className="ach-chip gold">{a.icon}</div>
+        <span className="ach-result hl">{a.badge}</span>
+      </div>
+      <h3 className="ach-name">{a.title}</h3>
+      <p className="ach-sub">Issued by {a.issuer} · {a.date}</p>
+      <p className="ach-desc">{a.desc}</p>
+      {a.link && (
+        <a className="ach-link" href={a.link} target="_blank" rel="noopener noreferrer">
+          {I.external} View Credential
+        </a>
+      )}
+    </article>
   );
 }
 
 function HackCard({ h, idx }) {
   const ref = useReveal(0.15);
   return (
-    <div className="ach-card hack-card reveal" ref={ref} style={{ transitionDelay: `${(idx + 1) * 0.1}s` }}>
-      <div className="ach-badge hack-badge">{h.result}</div>
-      <div className="hack-top">
-        <span className="hack-icon">{h.icon}</span>
-        <span className="hack-mode">{h.mode}</span>
+    <article className="ach-card hack reveal" ref={ref} style={{ transitionDelay: `${(idx + 1) * 0.08}s` }}>
+      <div className="ach-card-top">
+        <div className="ach-chip">{h.icon}</div>
+        <span className={`ach-result ${h.highlight ? 'hl' : ''}`}>{h.result}</span>
       </div>
-      <h3 className="hack-project">{h.project}</h3>
-      <p className="hack-project-sub">{h.projectSub}</p>
+      <h3 className="ach-name">{h.project}</h3>
+      <p className="ach-sub">{h.projectSub}</p>
       <p className="hack-event">{h.event}</p>
-      <div className="hack-meta">
-        <span>👥 {h.team}</span>
-        <span>🎯 {h.theme}</span>
+      <p className="ach-desc">{h.role}</p>
+      <div className="hack-foot">
+        <span className="hack-mi">{I.users}{h.team}</span>
+        <span className="hack-mi">{I.target}{h.theme}</span>
+        <span className="hack-mi">{I.clock}{h.mode}</span>
       </div>
-      <p className="hack-role">{h.role}</p>
-      <div className="tags" style={{ marginTop: '1rem' }}>
+      <div className="tags">
         {h.stack.map(t => <span key={t} className="tag">{t}</span>)}
       </div>
-    </div>
+    </article>
   );
 }
 
@@ -148,12 +154,18 @@ export default function Achievements() {
     <section className="sec" id="achievements">
       <div className="sec-hd reveal" ref={hdRef}>
         <span className="sec-num">06 —</span>
-        <h2 className="sec-title">Achievements & <span>Certifications</span></h2>
+        <h2 className="sec-title">Achievements &amp; <span>Certifications</span></h2>
         <div className="sec-line" />
       </div>
-      <div className="ach-grid">
+
+      <p className="ach-subhd">Education &amp; Credentials</p>
+      <div className="ach-feature">
         <CgpaCard />
-        <CertCard />
+        {CERTS.map(c => <CertCard key={c.title} a={c} />)}
+      </div>
+
+      <p className="ach-subhd">Hackathons &amp; Competitions</p>
+      <div className="ach-hacks">
         {HACKATHONS.map((h, i) => <HackCard key={h.event} h={h} idx={i} />)}
       </div>
     </section>

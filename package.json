@@ -2,7 +2,7 @@
   "name": "portfolio-v",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://varshini057.github.io/Portfolio-v",
+  "homepage": "https://varshini057.github.io/Portfolio",
   "description": "Personal portfolio site",
   "scripts": {
     "start": "react-scripts start",
